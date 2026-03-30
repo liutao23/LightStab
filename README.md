@@ -141,7 +141,6 @@ A typical project layout is as follows:
 .
 ├── scripts/
 │   └── onlinestab.py
-├── LightStab_assets/
 ├── environment.yaml
 ├── README.md
 └── ...
@@ -215,7 +214,6 @@ If you find this repository useful, please consider citing:
   year={2022},
   publisher={IEEE}
 }
-
 @article{liu2026no,
   title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
   author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
@@ -223,17 +221,6 @@ If you find this repository useful, please consider citing:
   year={2026}
 }
 
-@article{Liu_Wan_Bai_Kong_Tang_Wang_2024,
-  title={Real-Time Video Stabilization Algorithm Based on SuperPoint},
-  volume={73},
-  DOI={10.1109/tim.2023.3342849},
-  journal={IEEE Transactions on Instrumentation and Measurement},
-  author={Liu, Tao and Wan, Gang and Bai, Hongyang and Kong, Xiaofang and Tang, Bo and Wang, Fangyi},
-  year={2024},
-  month={Jan},
-  pages={1--13},
-  language={English}
-}
 ```
 
 ---
@@ -350,7 +337,6 @@ python onlinestab.py
 .
 ├── scripts/
 │   └── onlinestab.py
-├── LightStab_assets/
 ├── environment.yaml
 ├── README.md
 └── ...
@@ -423,24 +409,11 @@ python onlinestab.py
   year={2022},
   publisher={IEEE}
 }
-
 @article{liu2026no,
   title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
   author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
   journal={arXiv preprint arXiv:2602.23141},
   year={2026}
-}
-
-@article{Liu_Wan_Bai_Kong_Tang_Wang_2024,
-  title={Real-Time Video Stabilization Algorithm Based on SuperPoint},
-  volume={73},
-  DOI={10.1109/tim.2023.3342849},
-  journal={IEEE Transactions on Instrumentation and Measurement},
-  author={Liu, Tao and Wan, Gang and Bai, Hongyang and Kong, Xiaofang and Tang, Bo and Wang, Fangyi},
-  year={2024},
-  month={Jan},
-  pages={1--13},
-  language={English}
 }
 ```
 
