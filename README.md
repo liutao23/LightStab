@@ -228,12 +228,10 @@ If you find this repository useful, please consider citing:
 ## FAQ
 
 ### Q1: Are the training scripts available?
-
 Not yet. We plan to release them after the journal extension and submission process is completed.
 
 ### Q2: Is the dataset available now?
-
-Not yet. It will be released together with the complete training resources.
+not yet. The training data consists not of raw video frames, but of extracted keypoints and optical flow. I need time to organize it and release it along with the dataset, but right now I'm busy preparing the next paper and the deadline is tight. Please understand.
 
 ### Q3: Can I request the training scripts by email?
 
@@ -427,7 +425,7 @@ python onlinestab.py
 
 ### Q2：数据集现在可以下载吗？
 
-暂时还不可以。后续会和完整训练资源一起发布。
+暂时还不可以。因为训练的数据并非原始视频帧，而是提取的关键点和光流，我需要时间来整理和数据集一起发布，但我现在忙于准备下一篇工作，deadline比较着急，请理解。
 
 ### Q3：可以通过邮件提前索要训练脚本吗？
 
