@@ -50,24 +50,24 @@
 ## News
 
 - **[2026-03]** Repository initialized.
-- **[2026-03]** Inference code for online stabilization is available.
+- **[2026-03]** Online stabilization inference code released.
 - **[Coming Soon]** Code cleanup, dataset release, and training scripts.
 
 ---
 
 ## Overview
 
-This repository presents our work:
+This repository hosts our work:
 
 **No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors**
 
 We are currently revising and polishing the manuscript.  
-The code and datasets will be released soon.
+The code and datasets will be released progressively.
 
 This work is heavily inspired by [DUTCode](https://github.com/Annbless/DUTCode.git).  
 We sincerely thank the original authors for their generous open-source contribution and pay tribute to their excellent work.
 
-Our work mainly introduces **practical modifications** to support **online video stabilization**, while keeping the spirit of strong prior-based stabilization methods.  
+Our method mainly introduces **practical modifications** to support **online video stabilization**, while preserving the strengths of prior-based stabilization frameworks.  
 Up to now, we still believe that **DUTCode remains one of the best video stabilization methods**.
 
 ---
@@ -75,19 +75,19 @@ Up to now, we still believe that **DUTCode remains one of the best video stabili
 ## Highlights
 
 - **Unsupervised** video stabilization
-- **Online** inference without look-ahead
+- **Online** inference without future-frame look-ahead
 - Built upon strong **classical priors**
-- Practical and lightweight adaptation for real-time / online settings
+- Lightweight and practical adaptation for real-time / online scenarios
 - Inspired by strong existing stabilization frameworks
 
 ---
 
 ## Method
 
-Our method focuses on **online video stabilization without labels and without future-frame look-ahead**.
+Our method focuses on **unsupervised online video stabilization without labels and without future-frame look-ahead**.
 
 Unlike offline stabilization methods that rely on future information, this work targets a more practical online setting, where each frame is processed causally.  
-The framework is designed with classical priors in mind and inherits strong inspiration from prior stabilization literature.
+The overall framework follows classical stabilization priors and inherits strong inspiration from previous video stabilization literature.
 
 > More technical details, visual results, and ablation studies will be added after the manuscript revision is finalized.
 
@@ -97,8 +97,9 @@ The framework is designed with classical priors in mind and inherits strong insp
 
 - Manuscript: **under revision**
 - Inference / online demo: **available**
+- Test dataset (**UAV-test**): **available**
 - Training scripts: **not released yet**
-- Dataset: **coming soon**
+- Full training dataset: **coming soon**
 
 ---
 
@@ -110,8 +111,7 @@ Please download the `LightStab_assets` package and copy **all files** directly i
 
 These files include pretrained weights and required runtime assets.
 
-Download link:  
-https://drive.usercontent.google.com/download?id=1pHD3BR2KXKHjksKTx5z50HAE-2GNOO17&export=download&authuser=0&confirm=t&uuid=cd5409a4-0e8e-49f4-8189-23ef4f6ea6c1&at=AGN2oQ07Ev9BOwUa2gHbhyxK3fr3:1774845474015
+[Download LightStab_assets](https://drive.usercontent.google.com/download?id=1pHD3BR2KXKHjksKTx5z50HAE-2GNOO17&export=download&authuser=0&confirm=t&uuid=cd5409a4-0e8e-49f4-8189-23ef4f6ea6c1&at=AGN2oQ07Ev9BOwUa2gHbhyxK3fr3:1774845474015)
 
 ### 2. Create and activate the environment
 
@@ -154,12 +154,13 @@ A typical project layout is as follows:
 
 - [x] Release initial inference code
 - [x] Provide runtime assets / pretrained weights
-- [ ] Release cleaned repository version
-- [ ] Release dataset
+- [x] Release the test dataset (UAV-test)
+- [ ] Release a cleaned repository version
+- [ ] Release the full training dataset
 - [ ] Release training scripts
 - [ ] Add qualitative visualization results
 - [ ] Add more detailed documentation
-- [ ] Add journal-extension version updates
+- [ ] Add updates for the journal-extension version
 
 ---
 
@@ -168,9 +169,9 @@ A typical project layout is as follows:
 We are currently preparing an extended journal version of this work.  
 For this reason, the **training scripts are not publicly available at this stage**.
 
-We expect to release the **full training code and dataset** after the journal extension and submission process is completed, which is currently planned for **around the end of August**.
+We expect to release the **full training code and dataset** after the journal extension and submission process is completed, which is currently planned for **around late August**.
 
-Before that, **please do not email us to request the training scripts**, as we will not be able to respond to such requests.
+Before that, **please do not email us to request the training scripts**, as we will not be able to reply to such requests individually.
 
 Thank you for your understanding and support.
 
@@ -214,13 +215,13 @@ If you find this repository useful, please consider citing:
   year={2022},
   publisher={IEEE}
 }
+
 @article{liu2026no,
   title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
   author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
   journal={arXiv preprint arXiv:2602.23141},
   year={2026}
 }
-
 ```
 
 ---
@@ -228,14 +229,22 @@ If you find this repository useful, please consider citing:
 ## FAQ
 
 ### Q1: Are the training scripts available?
+
 Not yet. We plan to release them after the journal extension and submission process is completed.
 
 ### Q2: Is the dataset available now?
-not yet. The training data consists not of raw video frames, but of extracted keypoints and optical flow. I need time to organize it and release it along with the dataset, but right now I'm busy preparing the next paper and the deadline is tight. Please understand.
+
+At present, only the paper’s test dataset **UAV-test** is available:
+
+[Download UAV-test](https://drive.usercontent.google.com/download?id=1eHJ4Z8uqPKheDDzea4nQWGwwq5aauBvh&export=download&authuser=0&confirm=t&uuid=f05ae258-5403-4dec-add8-27ce19a96fab&at=AGN2oQ1ce8ktgFS0Qhf1KN_8P4dF:1775119978751)
+
+The training data does not consist of raw video frames, but rather extracted keypoints and optical flow.  
+I still need time to organize these materials and release them together with the full dataset.  
+At the moment, I am busy preparing the next paper and the deadline is tight. Thank you for your understanding.
 
 ### Q3: Can I request the training scripts by email?
 
-Please do not email us for training scripts at this stage. Such requests will not be replied to.
+Please do not email us to request the training scripts at this stage. Such requests will not be replied to individually.
 
 ---
 
@@ -244,8 +253,8 @@ Please do not email us for training scripts at this stage. Such requests will no
 ## 更新日志
 
 - **[2026-03]** 初始化仓库。
-- **[2026-03]** 提供在线视频稳定推理代码。
-- **[即将发布]** 代码整理、数据集与训练脚本。
+- **[2026-03]** 发布在线视频稳定推理代码。
+- **[即将发布]** 代码整理、数据集和训练脚本。
 
 ---
 
@@ -256,12 +265,12 @@ Please do not email us for training scripts at this stage. Such requests will no
 **No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors**
 
 目前我们正在对论文稿件进行进一步修改和润色。  
-代码与数据集将在近期公开。
+代码与数据集将逐步公开。
 
 本工作受到了 [DUTCode](https://github.com/Annbless/DUTCode.git) 的巨大启发。  
 我们非常感谢原作者的无私开源，并向其优秀工作致敬。
 
-本仓库主要是在现有优秀方法基础上进行了**小幅但实用的改进**，核心目标是支持**在线视频稳定**。  
+本方法主要在现有稳定框架基础上进行了**实用性的改进**，核心目标是支持**在线视频稳定**。  
 截至目前，我们仍然认为 **DUTCode 是最优秀的视频稳定方法之一**。
 
 ---
@@ -269,19 +278,19 @@ Please do not email us for training scripts at this stage. Such requests will no
 ## 项目特点
 
 - **无监督** 视频稳定
-- **在线视频稳定**，无需 look-ahead
-- 融合有效的 **经典先验**
-- 面向在线/实时场景的轻量改造
-- 基于已有优秀稳定框架进一步扩展
+- **在线视频推理**，无需未来帧 look-ahead
+- 基于有效的 **经典先验**
+- 面向实时 / 在线场景的轻量实用改造
+- 在优秀已有稳定框架基础上进一步扩展
 
 ---
 
 ## 方法说明
 
-本方法聚焦于**无标签、无未来帧信息条件下的在线视频稳定**。
+本方法聚焦于**无标签、无未来帧信息条件下的无监督在线视频稳定**。
 
 与依赖未来帧信息的离线稳定方法不同，本工作更关注真实部署中更实用的在线场景，即每一帧都以因果方式处理。  
-整体框架保留了经典先验方法的思想，并吸收了大量已有视频稳定工作的启发。
+整体框架延续了经典稳定先验的思想，并吸收了大量已有视频稳定工作的启发。
 
 > 更多技术细节、可视化结果和消融实验将在论文修改完成后逐步补充。
 
@@ -291,8 +300,9 @@ Please do not email us for training scripts at this stage. Such requests will no
 
 - 论文：**正在修改中**
 - 推理 / 在线演示：**已提供**
+- 测试数据集（**UAV-test**）：**已提供**
 - 训练脚本：**暂未开放**
-- 数据集：**即将开放**
+- 完整训练数据集：**即将开放**
 
 ---
 
@@ -304,8 +314,7 @@ Please do not email us for training scripts at this stage. Such requests will no
 
 这些文件主要包括预训练权重和运行所需资源。
 
-下载链接：  
-https://drive.usercontent.google.com/download?id=1pHD3BR2KXKHjksKTx5z50HAE-2GNOO17&export=download&authuser=0&confirm=t&uuid=cd5409a4-0e8e-49f4-8189-23ef4f6ea6c1&at=AGN2oQ07Ev9BOwUa2gHbhyxK3fr3:1774845474015
+[下载 LightStab_assets](https://drive.usercontent.google.com/download?id=1pHD3BR2KXKHjksKTx5z50HAE-2GNOO17&export=download&authuser=0&confirm=t&uuid=cd5409a4-0e8e-49f4-8189-23ef4f6ea6c1&at=AGN2oQ07Ev9BOwUa2gHbhyxK3fr3:1774845474015)
 
 ### 2. 创建并激活环境
 
@@ -348,8 +357,9 @@ python onlinestab.py
 
 - [x] 发布初版推理代码
 - [x] 提供运行所需权重与资源文件
+- [x] 发布测试数据集（UAV-test）
 - [ ] 发布整理后的完整仓库版本
-- [ ] 发布数据集
+- [ ] 发布完整训练数据集
 - [ ] 发布训练脚本
 - [ ] 补充定性可视化结果
 - [ ] 补充更详细的使用文档
@@ -362,9 +372,9 @@ python onlinestab.py
 由于我们正在准备该工作的期刊扩展版本，  
 因此**训练脚本暂时不会公开**。
 
-我们预计将在**今年 8 月底左右**，完成扩刊与投稿流程后，立即公开**完整训练代码和数据集**。
+我们预计将在完成扩刊与投稿流程后，于**8 月底左右**公开**完整训练代码和数据集**。
 
-在此之前，**请不要通过邮件索要训练脚本**，相关邮件将不再单独回复。  
+在此之前，**请不要通过邮件索要训练脚本**，相关请求将不再单独回复。  
 感谢理解与支持。
 
 ---
@@ -407,6 +417,7 @@ python onlinestab.py
   year={2022},
   publisher={IEEE}
 }
+
 @article{liu2026no,
   title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
   author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
@@ -423,9 +434,15 @@ python onlinestab.py
 
 暂时没有。训练脚本会在期刊扩展和投稿流程完成后公开。
 
-### Q2：数据集现在可以下载吗？
+### Q2：现在可以下载数据集吗？
 
-暂时还不可以。因为训练的数据并非原始视频帧，而是提取的关键点和光流，我需要时间来整理和数据集一起发布，但我现在忙于准备下一篇工作，deadline比较着急，请理解。
+目前仅开放论文中的测试数据集 **UAV-test**：
+
+[下载 UAV-test](https://drive.usercontent.google.com/download?id=1eHJ4Z8uqPKheDDzea4nQWGwwq5aauBvh&export=download&authuser=0&confirm=t&uuid=f05ae258-5403-4dec-add8-27ce19a96fab&at=AGN2oQ1ce8ktgFS0Qhf1KN_8P4dF:1775119978751)
+
+训练数据并不是原始视频帧，而是提取后的关键点和光流数据。  
+我还需要一些时间来整理这些内容，并与完整数据集一起发布。  
+目前我正在准备下一篇工作，时间比较紧张，还请理解。
 
 ### Q3：可以通过邮件提前索要训练脚本吗？
 
