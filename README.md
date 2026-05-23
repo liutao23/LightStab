@@ -1,12 +1,25 @@
 # No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
 
 <p align="center">
-  <b>[CVPR 2026]</b><br>
-  Unsupervised Online Video Stabilization with Classical Priors
+  <b>CVPR 2026</b><br>
+  Official implementation for <br>
+  <b>No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors</b>
 </p>
 
 <p align="center">
-  <a href="#english">English</a> •
+  <a href="https://cvpr.thecvf.com/virtual/2026/poster/39183"><img src="https://img.shields.io/badge/CVPR-2026-4b44ce.svg" alt="CVPR 2026"></a>
+  <a href="https://arxiv.org/abs/2602.23141"><img src="https://img.shields.io/badge/arXiv-2602.23141-b31b1b.svg" alt="arXiv"></a>
+  <a href="https://doi.org/10.48550/arXiv.2602.23141"><img src="https://img.shields.io/badge/DOI-10.48550%2FarXiv.2602.23141-blue.svg" alt="DOI"></a>
+  <a href="https://www.youtube.com/watch?v=SBrtgR3HAJo"><img src="https://img.shields.io/badge/Video-YouTube-red.svg" alt="YouTube video"></a>
+</p>
+
+<p align="center">
+  <a href="https://cvpr.thecvf.com/virtual/2026/poster/39183">CVPR Page</a> •
+  <a href="https://arxiv.org/abs/2602.23141">arXiv</a> •
+  <a href="https://arxiv.org/pdf/2602.23141">Paper PDF</a> •
+  <a href="#poster-and-video">Poster & Video</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#citation">Citation</a> •
   <a href="#中文">中文</a>
 </p>
 
@@ -17,6 +30,7 @@
 - [English](#english)
   - [News](#news)
   - [Overview](#overview)
+  - [Poster and Video](#poster-and-video)
   - [Highlights](#highlights)
   - [Method](#method)
   - [Project Status](#project-status)
@@ -31,6 +45,7 @@
 - [中文](#中文)
   - [更新日志](#更新日志)
   - [项目简介](#项目简介)
+  - [海报与视频](#海报与视频)
   - [项目特点](#项目特点)
   - [方法说明](#方法说明)
   - [当前状态](#当前状态)
@@ -49,26 +64,50 @@
 
 ## News
 
+- **[2026-05]** CVPR 2026 virtual poster page and presentation video are available.
+- **[2026-02]** Paper released on arXiv.
 - **[2026-03]** Repository initialized.
 - **[2026-03]** Online stabilization inference code released.
-- **[Coming Soon]** Code cleanup, dataset release, and training scripts.
+- **[Coming Soon]** Code cleanup, full dataset release, and training scripts.
 
 ---
 
 ## Overview
 
-This repository hosts our work:
+This repository contains the official implementation of our CVPR 2026 paper:
 
 **No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors**
 
-We are currently revising and polishing the manuscript.  
-The code and datasets will be released progressively.
+We propose an **unsupervised online video stabilization** framework that does not rely on paired stable / unstable training labels and does not use future-frame look-ahead during inference. The method instantiates a classical stabilization pipeline with practical priors and a multithreaded buffering mechanism, targeting causal online deployment and resource-constrained hardware.
 
-This work is heavily inspired by [DUTCode](https://github.com/Annbless/DUTCode.git).  
-We sincerely thank the original authors for their generous open-source contribution and pay tribute to their excellent work.
+This work is heavily inspired by [DUTCode](https://github.com/Annbless/DUTCode.git). We sincerely thank the original authors for their generous open-source contribution and pay tribute to their excellent work. Up to now, we still believe that **DUTCode remains one of the best video stabilization methods**.
 
-Our method mainly introduces **practical modifications** to support **online video stabilization**, while preserving the strengths of prior-based stabilization frameworks.  
-Up to now, we still believe that **DUTCode remains one of the best video stabilization methods**.
+---
+
+## Poster and Video
+
+- [CVPR 2026 virtual poster page](https://cvpr.thecvf.com/virtual/2026/poster/39183)
+- [arXiv page](https://arxiv.org/abs/2602.23141)
+- [Paper PDF](https://arxiv.org/pdf/2602.23141)
+- [YouTube presentation](https://www.youtube.com/watch?v=SBrtgR3HAJo)
+
+<!--
+If the CVPR-hosted poster image does not render before the CVPR virtual site finishes updating,
+replace the src below with a local file such as assets/poster.png.
+GitHub supports relative image paths in Markdown files.
+-->
+
+<p align="center">
+  <a href="https://cvpr.thecvf.com/virtual/2026/poster/39183">
+    <img src="https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39183.png" alt="CVPR 2026 Poster" width="95%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=SBrtgR3HAJo">
+    <img src="https://img.youtube.com/vi/SBrtgR3HAJo/maxresdefault.jpg" alt="Watch the CVPR 2026 presentation video" width="70%">
+  </a>
+</p>
 
 ---
 
@@ -78,7 +117,8 @@ Up to now, we still believe that **DUTCode remains one of the best video stabili
 - **Online** inference without future-frame look-ahead
 - Built upon strong **classical priors**
 - Lightweight and practical adaptation for real-time / online scenarios
-- Inspired by strong existing stabilization frameworks
+- Multithreaded buffering for efficient causal processing
+- UAV-Test benchmark for multimodal UAV aerial video stabilization
 
 ---
 
@@ -86,18 +126,26 @@ Up to now, we still believe that **DUTCode remains one of the best video stabili
 
 Our method focuses on **unsupervised online video stabilization without labels and without future-frame look-ahead**.
 
-Unlike offline stabilization methods that rely on future information, this work targets a more practical online setting, where each frame is processed causally.  
-The overall framework follows classical stabilization priors and inherits strong inspiration from previous video stabilization literature.
+Unlike offline stabilization methods that rely on future information, this work targets a more practical online setting, where each frame is processed causally. The overall framework follows the classical stabilization pipeline and incorporates practical priors for motion estimation, motion propagation, and motion compensation.
 
-> More technical details, visual results, and ablation studies will be added after the manuscript revision is finalized.
+The design addresses three practical challenges that often limit end-to-end learning-based stabilizers:
+
+1. limited availability of paired stable / unstable video data;
+2. reduced controllability in fully learned pipelines;
+3. inefficient deployment on resource-constrained hardware.
+
+More technical details, visual results, and ablation studies will be added as the repository is cleaned and updated.
 
 ---
 
 ## Project Status
 
-- Manuscript: **under revision**
+- Paper: **accepted to CVPR 2026**
+- arXiv preprint: **available**
+- CVPR virtual poster page: **available**
+- YouTube presentation: **available**
 - Inference / online demo: **available**
-- Test dataset (**UAV-test**): **available**
+- Test dataset (**UAV-Test**): **available**
 - Training scripts: **not released yet**
 - Full training dataset: **coming soon**
 
@@ -146,7 +194,7 @@ A typical project layout is as follows:
 └── ...
 ```
 
-> The exact structure may evolve as the repository is further cleaned and updated.
+The exact structure may evolve as the repository is further cleaned and updated.
 
 ---
 
@@ -154,7 +202,9 @@ A typical project layout is as follows:
 
 - [x] Release initial inference code
 - [x] Provide runtime assets / pretrained weights
-- [x] Release the test dataset (UAV-test)
+- [x] Release the test dataset (**UAV-Test**)
+- [x] Add CVPR virtual poster page link
+- [x] Add YouTube presentation link
 - [ ] Release a cleaned repository version
 - [ ] Release the full training dataset
 - [ ] Release training scripts
@@ -166,8 +216,7 @@ A typical project layout is as follows:
 
 ## Important Note
 
-We are currently preparing an extended journal version of this work.  
-For this reason, the **training scripts are not publicly available at this stage**.
+We are currently preparing an extended journal version of this work. For this reason, the **training scripts are not publicly available at this stage**.
 
 We expect to release the **full training code and dataset** after the journal extension and submission process is completed, which is currently planned for **around late August**.
 
@@ -206,23 +255,25 @@ Special thanks to the authors of **DUTCode** for their inspiring open-source con
 If you find this repository useful, please consider citing:
 
 ```bibtex
+@inproceedings{liu2026nolabelsnolookahead,
+  title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
+  author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}
+
 @article{xu2022dut,
   title={Dut: Learning video stabilization by simply watching unstable videos},
-  author={Xu, Yufei and Zhang, Jing and Maybank, Stephen J and Tao, Dacheng},
+  author={Xu, Yufei and Zhang, Jing and Maybank, Stephen J. and Tao, Dacheng},
   journal={IEEE Transactions on Image Processing},
   volume={31},
   pages={4306--4320},
   year={2022},
   publisher={IEEE}
 }
-
-@article{liu2026no,
-  title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
-  author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
-  journal={arXiv preprint arXiv:2602.23141},
-  year={2026}
-}
 ```
+
+The arXiv version is available at [arXiv:2602.23141](https://arxiv.org/abs/2602.23141).
 
 ---
 
@@ -234,13 +285,11 @@ Not yet. We plan to release them after the journal extension and submission proc
 
 ### Q2: Is the dataset available now?
 
-At present, only the paper’s test dataset **UAV-test** is available:
+At present, only the paper's test dataset **UAV-Test** is available:
 
-[Download UAV-test](https://drive.usercontent.google.com/download?id=1eHJ4Z8uqPKheDDzea4nQWGwwq5aauBvh&export=download&authuser=0&confirm=t&uuid=f05ae258-5403-4dec-add8-27ce19a96fab&at=AGN2oQ1ce8ktgFS0Qhf1KN_8P4dF:1775119978751)
+[Download UAV-Test](https://drive.usercontent.google.com/download?id=1eHJ4Z8uqPKheDDzea4nQWGwwq5aauBvh&export=download&authuser=0&confirm=t&uuid=f05ae258-5403-4dec-add8-27ce19a96fab&at=AGN2oQ1ce8ktgFS0Qhf1KN_8P4dF:1775119978751)
 
-The training data does not consist of raw video frames, but rather extracted keypoints and optical flow.  
-I still need time to organize these materials and release them together with the full dataset.  
-At the moment, I am busy preparing the next paper and the deadline is tight. Thank you for your understanding.
+The training data does not consist of raw video frames, but rather extracted keypoints and optical flow. We still need time to organize these materials and release them together with the full dataset.
 
 ### Q3: Can I request the training scripts by email?
 
@@ -252,26 +301,50 @@ Please do not email us to request the training scripts at this stage. Such reque
 
 ## 更新日志
 
+- **[2026-05]** 已添加 CVPR 2026 虚拟海报页面和报告视频链接。
+- **[2026-02]** 论文已发布至 arXiv。
 - **[2026-03]** 初始化仓库。
 - **[2026-03]** 发布在线视频稳定推理代码。
-- **[即将发布]** 代码整理、数据集和训练脚本。
+- **[即将发布]** 代码整理、完整数据集和训练脚本。
 
 ---
 
 ## 项目简介
 
-本仓库对应论文：
+本仓库是 CVPR 2026 论文的官方实现：
 
 **No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors**
 
-目前我们正在对论文稿件进行进一步修改和润色。  
-代码与数据集将逐步公开。
+本文提出一种**无监督在线视频稳定**框架，不依赖成对的稳定 / 不稳定视频标签，并且在推理过程中不使用未来帧 look-ahead 信息。该方法以经典视频稳定流程为基础，结合实用先验与多线程缓冲机制，面向因果在线部署和资源受限硬件场景。
 
-本工作受到了 [DUTCode](https://github.com/Annbless/DUTCode.git) 的巨大启发。  
-我们非常感谢原作者的无私开源，并向其优秀工作致敬。
+本工作受到了 [DUTCode](https://github.com/Annbless/DUTCode.git) 的巨大启发。我们非常感谢原作者的无私开源，并向其优秀工作致敬。截至目前，我们仍然认为 **DUTCode 是最优秀的视频稳定方法之一**。
 
-本方法主要在现有稳定框架基础上进行了**实用性的改进**，核心目标是支持**在线视频稳定**。  
-截至目前，我们仍然认为 **DUTCode 是最优秀的视频稳定方法之一**。
+---
+
+## 海报与视频
+
+- [CVPR 2026 虚拟海报页面](https://cvpr.thecvf.com/virtual/2026/poster/39183)
+- [arXiv 页面](https://arxiv.org/abs/2602.23141)
+- [论文 PDF](https://arxiv.org/pdf/2602.23141)
+- [YouTube 报告视频](https://www.youtube.com/watch?v=SBrtgR3HAJo)
+
+<!--
+如果 CVPR 托管的海报图在虚拟站点更新完成前无法渲染，
+可以把下面的 src 替换为本仓库中的本地文件，例如 assets/poster.png。
+GitHub README 支持相对路径图片。
+-->
+
+<p align="center">
+  <a href="https://cvpr.thecvf.com/virtual/2026/poster/39183">
+    <img src="https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202026/39183.png" alt="CVPR 2026 Poster" width="95%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=SBrtgR3HAJo">
+    <img src="https://img.youtube.com/vi/SBrtgR3HAJo/maxresdefault.jpg" alt="观看 CVPR 2026 报告视频" width="70%">
+  </a>
+</p>
 
 ---
 
@@ -281,7 +354,8 @@ Please do not email us to request the training scripts at this stage. Such reque
 - **在线视频推理**，无需未来帧 look-ahead
 - 基于有效的 **经典先验**
 - 面向实时 / 在线场景的轻量实用改造
-- 在优秀已有稳定框架基础上进一步扩展
+- 多线程缓冲机制，支持高效因果处理
+- 面向多模态无人机航拍视频稳定的 **UAV-Test** 测试集
 
 ---
 
@@ -289,18 +363,26 @@ Please do not email us to request the training scripts at this stage. Such reque
 
 本方法聚焦于**无标签、无未来帧信息条件下的无监督在线视频稳定**。
 
-与依赖未来帧信息的离线稳定方法不同，本工作更关注真实部署中更实用的在线场景，即每一帧都以因果方式处理。  
-整体框架延续了经典稳定先验的思想，并吸收了大量已有视频稳定工作的启发。
+与依赖未来帧信息的离线稳定方法不同，本工作更关注真实部署中更实用的在线场景，即每一帧都以因果方式处理。整体框架遵循经典视频稳定流程，并结合运动估计、运动传播与运动补偿中的实用先验。
 
-> 更多技术细节、可视化结果和消融实验将在论文修改完成后逐步补充。
+该设计主要针对端到端学习稳定方法中的三个实际问题：
+
+1. 成对稳定 / 不稳定训练数据难以获取；
+2. 完全学习式流程的可控性较弱；
+3. 在资源受限硬件上的部署效率不足。
+
+更多技术细节、可视化结果和消融实验将在仓库整理后逐步补充。
 
 ---
 
 ## 当前状态
 
-- 论文：**正在修改中**
+- 论文：**CVPR 2026 已接收**
+- arXiv 预印本：**已开放**
+- CVPR 虚拟海报页面：**已开放**
+- YouTube 报告视频：**已开放**
 - 推理 / 在线演示：**已提供**
-- 测试数据集（**UAV-test**）：**已提供**
+- 测试数据集（**UAV-Test**）：**已提供**
 - 训练脚本：**暂未开放**
 - 完整训练数据集：**即将开放**
 
@@ -349,7 +431,7 @@ python onlinestab.py
 └── ...
 ```
 
-> 随着后续代码整理和更新，具体目录结构可能还会发生变化。
+随着后续代码整理和更新，具体目录结构可能还会发生变化。
 
 ---
 
@@ -357,7 +439,9 @@ python onlinestab.py
 
 - [x] 发布初版推理代码
 - [x] 提供运行所需权重与资源文件
-- [x] 发布测试数据集（UAV-test）
+- [x] 发布测试数据集（**UAV-Test**）
+- [x] 添加 CVPR 虚拟海报页面链接
+- [x] 添加 YouTube 报告视频链接
 - [ ] 发布整理后的完整仓库版本
 - [ ] 发布完整训练数据集
 - [ ] 发布训练脚本
@@ -369,12 +453,12 @@ python onlinestab.py
 
 ## 重要说明
 
-由于我们正在准备该工作的期刊扩展版本，  
-因此**训练脚本暂时不会公开**。
+由于我们正在准备该工作的期刊扩展版本，因此**训练脚本暂时不会公开**。
 
 我们预计将在完成扩刊与投稿流程后，于**8 月底左右**公开**完整训练代码和数据集**。
 
-在此之前，**请不要通过邮件索要训练脚本**，相关请求将不再单独回复。  
+在此之前，**请不要通过邮件索要训练脚本**，相关请求将不再单独回复。
+
 感谢理解与支持。
 
 ---
@@ -408,23 +492,25 @@ python onlinestab.py
 如果你觉得本仓库对你的研究有帮助，欢迎引用以下工作：
 
 ```bibtex
+@inproceedings{liu2026nolabelsnolookahead,
+  title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
+  author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}
+
 @article{xu2022dut,
   title={Dut: Learning video stabilization by simply watching unstable videos},
-  author={Xu, Yufei and Zhang, Jing and Maybank, Stephen J and Tao, Dacheng},
+  author={Xu, Yufei and Zhang, Jing and Maybank, Stephen J. and Tao, Dacheng},
   journal={IEEE Transactions on Image Processing},
   volume={31},
   pages={4306--4320},
   year={2022},
   publisher={IEEE}
 }
-
-@article{liu2026no,
-  title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
-  author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
-  journal={arXiv preprint arXiv:2602.23141},
-  year={2026}
-}
 ```
+
+arXiv 版本见 [arXiv:2602.23141](https://arxiv.org/abs/2602.23141)。
 
 ---
 
@@ -436,13 +522,11 @@ python onlinestab.py
 
 ### Q2：现在可以下载数据集吗？
 
-目前仅开放论文中的测试数据集 **UAV-test**：
+目前仅开放论文中的测试数据集 **UAV-Test**：
 
-[下载 UAV-test](https://drive.usercontent.google.com/download?id=1eHJ4Z8uqPKheDDzea4nQWGwwq5aauBvh&export=download&authuser=0&confirm=t&uuid=f05ae258-5403-4dec-add8-27ce19a96fab&at=AGN2oQ1ce8ktgFS0Qhf1KN_8P4dF:1775119978751)
+[下载 UAV-Test](https://drive.usercontent.google.com/download?id=1eHJ4Z8uqPKheDDzea4nQWGwwq5aauBvh&export=download&authuser=0&confirm=t&uuid=f05ae258-5403-4dec-add8-27ce19a96fab&at=AGN2oQ1ce8ktgFS0Qhf1KN_8P4dF:1775119978751)
 
-训练数据并不是原始视频帧，而是提取后的关键点和光流数据。  
-我还需要一些时间来整理这些内容，并与完整数据集一起发布。  
-目前我正在准备下一篇工作，时间比较紧张，还请理解。
+训练数据并不是原始视频帧，而是提取后的关键点和光流数据。我们还需要一些时间来整理这些内容，并与完整数据集一起发布。
 
 ### Q3：可以通过邮件提前索要训练脚本吗？
 
