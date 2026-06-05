@@ -8,15 +8,11 @@
 
 <p align="center">
   <a href="https://cvpr.thecvf.com/virtual/2026/poster/39183"><img src="https://img.shields.io/badge/CVPR-2026-4b44ce.svg" alt="CVPR 2026"></a>
-  <a href="https://arxiv.org/abs/2602.23141"><img src="https://img.shields.io/badge/arXiv-2602.23141-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://doi.org/10.48550/arXiv.2602.23141"><img src="https://img.shields.io/badge/DOI-10.48550%2FarXiv.2602.23141-blue.svg" alt="DOI"></a>
   <a href="https://www.youtube.com/watch?v=SBrtgR3HAJo"><img src="https://img.shields.io/badge/Video-YouTube-red.svg" alt="YouTube video"></a>
 </p>
 
 <p align="center">
   <a href="https://cvpr.thecvf.com/virtual/2026/poster/39183">CVPR Page</a> •
-  <a href="https://arxiv.org/abs/2602.23141">arXiv</a> •
-  <a href="https://arxiv.org/pdf/2602.23141">Paper PDF</a> •
   <a href="#poster-and-video">Poster & Video</a> •
   <a href="#quick-start">Quick Start</a> •
   <a href="#citation">Citation</a> •
@@ -65,7 +61,6 @@
 ## News
 
 - **[2026-05]** CVPR 2026 virtual poster page and presentation video are available.
-- **[2026-02]** Paper released on arXiv.
 - **[2026-03]** Repository initialized.
 - **[2026-03]** Online stabilization inference code released.
 - **[Coming Soon]** Code cleanup, full dataset release, and training scripts.
@@ -87,8 +82,7 @@ This work is heavily inspired by [DUTCode](https://github.com/Annbless/DUTCode.g
 ## Poster and Video
 
 - [CVPR 2026 virtual poster page](https://cvpr.thecvf.com/virtual/2026/poster/39183)
-- [arXiv page](https://arxiv.org/abs/2602.23141)
-- [Paper PDF](https://arxiv.org/pdf/2602.23141)
+- [Paper PDF](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_No_Labels_No_Look-Ahead_Unsupervised_Online_Video_Stabilization_with_Classical_CVPR_2026_paper.html)
 - [YouTube presentation](https://www.youtube.com/watch?v=SBrtgR3HAJo)
 
 <!--
@@ -141,7 +135,6 @@ More technical details, visual results, and ablation studies will be added as th
 ## Project Status
 
 - Paper: **accepted to CVPR 2026**
-- arXiv preprint: **available**
 - CVPR virtual poster page: **available**
 - YouTube presentation: **available**
 - Inference / online demo: **available**
@@ -255,11 +248,13 @@ Special thanks to the authors of **DUTCode** for their inspiring open-source con
 If you find this repository useful, please consider citing:
 
 ```bibtex
-@inproceedings{liu2026nolabelsnolookahead,
-  title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
-  author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2026}
+@InProceedings{Liu_2026_CVPR,
+    author    = {Liu, Tao and Ren, Kan and Wan, Gang and Wen, Shibo},
+    title     = {No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {6868-6877}
 }
 
 @article{xu2022dut,
@@ -272,8 +267,6 @@ If you find this repository useful, please consider citing:
   publisher={IEEE}
 }
 ```
-
-The arXiv version is available at [arXiv:2602.23141](https://arxiv.org/abs/2602.23141).
 
 ---
 
@@ -302,7 +295,6 @@ Please do not email us to request the training scripts at this stage. Such reque
 ## 更新日志
 
 - **[2026-05]** 已添加 CVPR 2026 虚拟海报页面和报告视频链接。
-- **[2026-02]** 论文已发布至 arXiv。
 - **[2026-03]** 初始化仓库。
 - **[2026-03]** 发布在线视频稳定推理代码。
 - **[即将发布]** 代码整理、完整数据集和训练脚本。
@@ -324,8 +316,7 @@ Please do not email us to request the training scripts at this stage. Such reque
 ## 海报与视频
 
 - [CVPR 2026 虚拟海报页面](https://cvpr.thecvf.com/virtual/2026/poster/39183)
-- [arXiv 页面](https://arxiv.org/abs/2602.23141)
-- [论文 PDF](https://arxiv.org/pdf/2602.23141)
+- [论文 PDF](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_No_Labels_No_Look-Ahead_Unsupervised_Online_Video_Stabilization_with_Classical_CVPR_2026_paper.html)
 - [YouTube 报告视频](https://www.youtube.com/watch?v=SBrtgR3HAJo)
 
 <!--
@@ -378,7 +369,6 @@ GitHub README 支持相对路径图片。
 ## 当前状态
 
 - 论文：**CVPR 2026 已接收**
-- arXiv 预印本：**已开放**
 - CVPR 虚拟海报页面：**已开放**
 - YouTube 报告视频：**已开放**
 - 推理 / 在线演示：**已提供**
@@ -492,11 +482,13 @@ python onlinestab.py
 如果你觉得本仓库对你的研究有帮助，欢迎引用以下工作：
 
 ```bibtex
-@inproceedings{liu2026nolabelsnolookahead,
-  title={No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
-  author={Liu, Tao and Wan, Gang and Ren, Kan and Wen, Shibo},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2026}
+@InProceedings{Liu_2026_CVPR,
+    author    = {Liu, Tao and Ren, Kan and Wan, Gang and Wen, Shibo},
+    title     = {No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+    pages     = {6868-6877}
 }
 
 @article{xu2022dut,
@@ -509,8 +501,6 @@ python onlinestab.py
   publisher={IEEE}
 }
 ```
-
-arXiv 版本见 [arXiv:2602.23141](https://arxiv.org/abs/2602.23141)。
 
 ---
 
